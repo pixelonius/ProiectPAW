@@ -37,9 +37,7 @@ namespace ProiectPAW
                 tbDenumire.Text += s + Environment.NewLine;
                 denumire += s + " ";
             }
-            SizeF tbDenumires = getSizes(tbDenumire);
-            int height = (int)(tbDenumires.Height * 1.3);
-            tbDenumire.Height = height;
+            setSizeBox(tbDenumire);
 
 
             foreach (var i in material1.cantitate)
@@ -47,7 +45,7 @@ namespace ProiectPAW
                 tbCantitate.Text += i.ToString() + Environment.NewLine;
                 cantitate += i.ToString() + " ";
             }
-            tbCantitate.Height = height;
+            setSizeBox(tbCantitate);
 
 
             foreach (var i in material1.pret)
@@ -55,7 +53,7 @@ namespace ProiectPAW
                 tbPret.Text += i.ToString() + Environment.NewLine;
                 pret += i.ToString() + " ";
             }
-            tbPret.Height = height;
+            setSizeBox(tbPret);
            
             
             
@@ -75,6 +73,14 @@ namespace ProiectPAW
                                               tb.Width,
                                               new StringFormat(0));
             return MessageSize;
+        }
+
+        private void setSizeBox(System.Windows.Forms.TextBox tb)
+        {
+            SizeF tbs = getSizes(tb);
+            int height = (int)(tbs.Height * 1.3);
+            tb.Height = height;
+
         }
 
         private void salvareFisierTextToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,10 +104,35 @@ namespace ProiectPAW
             dlg.Filter = "(*.txt)|*.txt";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
+                tbFurnizor.Clear();
+                tbDenumire.Clear();
+                tbCantitate.Clear();
+                tbPret.Clear();
                 StreamReader sr = new StreamReader(dlg.FileName);
-                tbDenumire.Text = sr.ReadLine();
-                sr.ReadLine();
-                //citeste linie cu linie;
+                tbFurnizor.Text = sr.ReadLine();
+                SizeF tbFurnizors = getSizes(tbFurnizor);
+                tbFurnizor.Width = (int)(tbFurnizors.Width * 1.7);
+                string[] denum = sr.ReadLine().Trim().Split(' ');
+                foreach(string s in denum)
+                {
+                    tbDenumire.Text += s + Environment.NewLine;
+                }
+
+                string[] cant= sr.ReadLine().Trim().Split(' ');
+                foreach(string s in cant)
+                {
+                    tbCantitate.Text += s + Environment.NewLine;
+                }
+
+                string[] prt= sr.ReadLine().Trim().Split(' ');
+                foreach(string s in prt)
+                {
+                    tbPret.Text += s + Environment.NewLine;
+                }
+                setSizeBox(tbDenumire);
+                setSizeBox(tbCantitate);
+                setSizeBox(tbPret);
+
                 sr.Close();
             }
         }
