@@ -15,12 +15,12 @@ namespace ProiectPAW
         List<string> denumiri=new List<string>();
         List<int> cantitati=new List<int>();
         List<int> preturi=new List<int>();
-        Furnizor furnizor1=new Furnizor();
+        Furnizor furnizor1;
 
         public Form3(Furnizor furnizor)
         {
             InitializeComponent();
-            Furnizor furnizor1= (Furnizor)furnizor.Clone();
+            furnizor1 = new Furnizor(furnizor.Nume, furnizor.Localitate, furnizor.Tara);
             Console.WriteLine(furnizor.ToString()+Environment.NewLine);
             Console.WriteLine(furnizor1.ToString() + "2");
 
@@ -55,9 +55,10 @@ namespace ProiectPAW
                 {
                     tbDenumire.Clear();
                     tbCantitate.Clear();
-                    tbPret.Clear(); 
-                    Form4 frm=new Form4(denumiri, cantitati, preturi, furnizor1);
+                    tbPret.Clear();
                     Console.WriteLine(furnizor1.ToString() + " 3");
+                    Form4 frm=new Form4(denumiri, cantitati, preturi, furnizor1);
+                   
                     frm.Show();
 
                 }

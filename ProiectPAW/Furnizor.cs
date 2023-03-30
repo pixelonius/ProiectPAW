@@ -26,13 +26,17 @@ namespace ProiectPAW
             this.tara = tara;
         }
 
+        public string Nume { get => nume; set => nume = value; }
+        public string Localitate { get => localitate; set => localitate = value; }
+        public string Tara { get => tara; set => tara = value; }
+
         public object Clone()
         {
-            /*Furnizor clona= (Furnizor)MemberwiseClone();
+            Furnizor clona = (Furnizor)MemberwiseClone();
             clona.nume = String.Copy(nume);
-            clona.localitate=String.Copy(localitate);
-            clona.tara=String.Copy(tara);*/
-            return this.MemberwiseClone();
+            clona.localitate = String.Copy(localitate);
+            clona.tara = String.Copy(tara);
+            return clona;
         }
 
         public override string ToString()
