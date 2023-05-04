@@ -22,7 +22,7 @@ namespace ProiectPAW
             pret= new int[0];
         }
 
-        public Materiale(Furnizor furnizor, string[] denumireMarfa, int[] cantitate, int[] pret)
+        public Materiale(Furnizor furnizor, string[] denumireMarfa, int[] cantitate, int[] pret, int total)
         {
             this.furnizor= (Furnizor)furnizor.Clone();
             this.denumireMarfa=new String[denumireMarfa.Length];
@@ -40,6 +40,7 @@ namespace ProiectPAW
             {
                 this.pret[i] = pret[i];
             }
+            this.total = total;
         }
 
         public object Clone()

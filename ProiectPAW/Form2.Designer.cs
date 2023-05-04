@@ -45,9 +45,9 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(344, 157);
+            this.btnNext.Location = new System.Drawing.Point(377, 156);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(104, 23);
+            this.btnNext.Size = new System.Drawing.Size(104, 30);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Mai departe";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             // 
             this.btnAnotherOne.Location = new System.Drawing.Point(12, 156);
             this.btnAnotherOne.Name = "btnAnotherOne";
-            this.btnAnotherOne.Size = new System.Drawing.Size(186, 23);
+            this.btnAnotherOne.Size = new System.Drawing.Size(186, 30);
             this.btnAnotherOne.TabIndex = 2;
             this.btnAnotherOne.Text = "Adaugati inca un furnizor";
             this.btnAnotherOne.UseVisualStyleBackColor = true;

@@ -16,16 +16,18 @@ namespace ProiectPAW
         List<string> denumiri1;
         List<int> cantitati1;
         List<int> preturi1;
+        int total1;
         Furnizor furnizor1;
 
        
-        public Form4(List<string> denumiri, List<int> cantitati, List<int> preturi, Furnizor furnizori )
+        public Form4(List<string> denumiri, List<int> cantitati, List<int> preturi, Furnizor furnizori, int total )
         {
             InitializeComponent();
             furnizor1 = (Furnizor)furnizori.Clone();
             denumiri1 = denumiri;
             cantitati1 = cantitati;
             preturi1 = preturi;
+            total1 = total;
             string rezultat = "Ati adaugat: ";
             for(int i = 0; i < denumiri1.Count; i++)
             {
@@ -50,9 +52,9 @@ namespace ProiectPAW
             foreach (var i in cantitati2)
                 Console.WriteLine(i.ToString());
            
-            Materiale material = new Materiale(furnizor1,denumiri2, cantitati2,preturi2);
+            Materiale material = new Materiale(furnizor1,denumiri2, cantitati2,preturi2, total1);
 
-            Form5 frm=new Form5(material);
+            Form6 frm=new Form6(material);
             Console.WriteLine(material.ToString());
             this.Close();
             frm.ShowDialog();

@@ -137,7 +137,10 @@ namespace ProiectPAW
             }
         }
 
-
-
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Form6 frm=new Form6(material1);
+            frm.Show();
+        }
     }
 }

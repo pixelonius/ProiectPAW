@@ -78,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 147);
+            this.label3.Location = new System.Drawing.Point(19, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 3;
@@ -96,15 +96,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(608, 147);
+            this.label5.Location = new System.Drawing.Point(601, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "Pret";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tbCantitate
             // 
-            this.tbCantitate.Location = new System.Drawing.Point(300, 178);
+            this.tbCantitate.Location = new System.Drawing.Point(300, 190);
             this.tbCantitate.Multiline = true;
             this.tbCantitate.Name = "tbCantitate";
             this.tbCantitate.ReadOnly = true;
@@ -114,7 +115,7 @@
             // 
             // tbPret
             // 
-            this.tbPret.Location = new System.Drawing.Point(576, 178);
+            this.tbPret.Location = new System.Drawing.Point(568, 190);
             this.tbPret.Multiline = true;
             this.tbPret.Name = "tbPret";
             this.tbPret.ReadOnly = true;
@@ -124,7 +125,7 @@
             // 
             // tbDenumire
             // 
-            this.tbDenumire.Location = new System.Drawing.Point(37, 192);
+            this.tbDenumire.Location = new System.Drawing.Point(22, 194);
             this.tbDenumire.Multiline = true;
             this.tbDenumire.Name = "tbDenumire";
             this.tbDenumire.ReadOnly = true;
@@ -134,38 +135,39 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salvareFisierTextToolStripMenuItem,
             this.citireFisierTextToolStripMenuItem,
             this.serializareToolStripMenuItem,
             this.desereializareToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 100);
             // 
             // salvareFisierTextToolStripMenuItem
             // 
             this.salvareFisierTextToolStripMenuItem.Name = "salvareFisierTextToolStripMenuItem";
-            this.salvareFisierTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvareFisierTextToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.salvareFisierTextToolStripMenuItem.Text = "Salvare fisier text";
             this.salvareFisierTextToolStripMenuItem.Click += new System.EventHandler(this.salvareFisierTextToolStripMenuItem_Click);
             // 
             // citireFisierTextToolStripMenuItem
             // 
             this.citireFisierTextToolStripMenuItem.Name = "citireFisierTextToolStripMenuItem";
-            this.citireFisierTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.citireFisierTextToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.citireFisierTextToolStripMenuItem.Text = "Citire fisier text";
             this.citireFisierTextToolStripMenuItem.Click += new System.EventHandler(this.citireFisierTextToolStripMenuItem_Click);
             // 
             // serializareToolStripMenuItem
             // 
             this.serializareToolStripMenuItem.Name = "serializareToolStripMenuItem";
-            this.serializareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serializareToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.serializareToolStripMenuItem.Text = "Serializare";
             // 
             // desereializareToolStripMenuItem
             // 
             this.desereializareToolStripMenuItem.Name = "desereializareToolStripMenuItem";
-            this.desereializareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desereializareToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
             this.desereializareToolStripMenuItem.Text = "Desereializare";
             // 
             // Form5
