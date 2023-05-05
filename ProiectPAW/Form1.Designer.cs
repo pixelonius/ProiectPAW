@@ -38,6 +38,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.cbFurnizori = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(179, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nume furnizor:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbLocalitateFurnizor
             // 
@@ -81,7 +83,6 @@
             this.label2.Size = new System.Drawing.Size(220, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Localitate furnizor:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbTaraFurnizor
             // 
@@ -91,7 +92,6 @@
             this.tbTaraFurnizor.Name = "tbTaraFurnizor";
             this.tbTaraFurnizor.Size = new System.Drawing.Size(449, 36);
             this.tbTaraFurnizor.TabIndex = 4;
-            this.tbTaraFurnizor.TextChanged += new System.EventHandler(this.tbTaraFurnizor_TextChanged);
             // 
             // label3
             // 
@@ -103,7 +103,6 @@
             this.label3.Size = new System.Drawing.Size(162, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tara furnizor:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button1
             // 
@@ -134,12 +133,48 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Introducere date companie";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // cbFurnizori
+            // 
+            this.cbFurnizori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFurnizori.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFurnizori.FormattingEnabled = true;
+            this.cbFurnizori.Location = new System.Drawing.Point(928, 140);
+            this.cbFurnizori.Name = "cbFurnizori";
+            this.cbFurnizori.Size = new System.Drawing.Size(199, 37);
+            this.cbFurnizori.TabIndex = 9;
+            this.cbFurnizori.SelectedIndexChanged += new System.EventHandler(this.cbFurnizori_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1005, 372);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(170, 50);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Continua";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(12, 372);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(170, 50);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Sterge furnizor";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1187, 453);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cbFurnizori);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -149,6 +184,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbNumeFurnizor);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -168,6 +204,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbFurnizori;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

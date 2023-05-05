@@ -41,7 +41,7 @@ namespace ProiectPAW
 
         public override string ToString()
         {
-            return "Societatea comerciala  " + nume + " din localitatea " + localitate + ", tara " + tara+"!";
+            return "Societatea comerciala  " + nume + " din localitatea " + localitate + ", tara " + tara+".";
         }
     }
 }
