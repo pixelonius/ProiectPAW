@@ -16,6 +16,7 @@ namespace ProiectPAW
         string denumire;
         string cantitate;
         string pret;
+        Bitmap bmp;
         public Form6(Materiale material)
 
         {
@@ -42,7 +43,7 @@ namespace ProiectPAW
             e.Graphics.DrawImage(bmp, 0, 0);
 
         }
-        Bitmap bmp;
+        
         private void btnPrint_Click(object sender, EventArgs e)
         {
             Graphics g=this.CreateGraphics();
@@ -62,6 +63,14 @@ namespace ProiectPAW
             {
                 e.Cancel = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form7 frm = new Form7(material1);
+            frm.ShowDialog();
+
+
         }
     }
 }

@@ -12,17 +12,17 @@ namespace ProiectPAW
        public Furnizor furnizor;
        public String[] denumireMarfa;
        public int[] cantitate;
-       public int[] pret;
-       public int total;
+       public double[] pret;
+       public double total;
 
         public Materiale() {
             furnizor = new Furnizor();
             denumireMarfa= new String[0];
             cantitate= new int[0];
-            pret= new int[0];
+            pret= new double[0];
         }
 
-        public Materiale(Furnizor furnizor, string[] denumireMarfa, int[] cantitate, int[] pret, int total)
+        public Materiale(Furnizor furnizor, string[] denumireMarfa, int[] cantitate, double[] pret, double total)
         {
             this.furnizor= (Furnizor)furnizor.Clone();
             this.denumireMarfa=new String[denumireMarfa.Length];
@@ -35,7 +35,7 @@ namespace ProiectPAW
             {
                 this.cantitate[i] = cantitate[i];
             }
-            this.pret = new int[pret.Length];
+            this.pret = new double[pret.Length];
             for(int i = 0; i < pret.Length; i++)
             {
                 this.pret[i] = pret[i];
@@ -57,7 +57,7 @@ namespace ProiectPAW
             {
                 clona.cantitate[i] = cantitate[i];
             }
-            clona.pret = new int[pret.Length];
+            clona.pret = new double[pret.Length];
             for (int i = 0; i < pret.Length; i++)
             {
                 clona.pret[i] = pret[i];
@@ -66,11 +66,12 @@ namespace ProiectPAW
             return clona;
         }
 
-        public int calculTotal()
+        public double calculTotal()
         {
             total = 0;
-            for(int i=0;i<pret.Length;i++) {
-                total += pret[i]*cantitate[i];
+            for (int i = 0; i < pret.Length; i++)
+            {
+                total += pret[i] * cantitate[i];
             }
 
             return total;
@@ -89,6 +90,18 @@ namespace ProiectPAW
             }
             return rezultat;
           
+        }
+
+        public double getMax()
+        {
+            double max = 0;
+            for(int i=0;i< pret.Length;i++)
+            {
+                double val = pret[i]*cantitate[i];
+                if(val>max ) max = val;
+                
+            }
+            return max;
         }
     }
 }

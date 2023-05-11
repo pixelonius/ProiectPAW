@@ -12,7 +12,7 @@ namespace ProiectPAW
         Furnizor furnizor;
         DateTime data;
         Materiale materiale;
-        int total;
+        double total;
 
         public Factura()
         {

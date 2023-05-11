@@ -15,12 +15,12 @@ namespace ProiectPAW
     {
         List<string> denumiri1;
         List<int> cantitati1;
-        List<int> preturi1;
+        List<double> preturi1;
         int total1;
         Furnizor furnizor1;
 
        
-        public Form4(List<string> denumiri, List<int> cantitati, List<int> preturi, Furnizor furnizori, int total )
+        public Form4(List<string> denumiri, List<int> cantitati, List<double> preturi, Furnizor furnizori, int total )
         {
             InitializeComponent();
             furnizor1 = (Furnizor)furnizori.Clone();
@@ -48,7 +48,7 @@ namespace ProiectPAW
             int marime = denumiri1.Count;
             string[] denumiri2 = denumiri1.ToArray();
             int[] cantitati2 = cantitati1.ToArray();
-            int[] preturi2=preturi1.ToArray();
+            double[] preturi2=preturi1.ToArray();
             foreach (var i in cantitati2)
                 Console.WriteLine(i.ToString());
            

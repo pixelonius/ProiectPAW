@@ -14,7 +14,7 @@ namespace ProiectPAW
     {
         List<string> denumiri=new List<string>();
         List<int> cantitati=new List<int>();
-        List<int> preturi=new List<int>();
+        List<double> preturi=new List<double>();
         Furnizor furnizor1;
         int total;
 
