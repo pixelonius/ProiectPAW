@@ -44,6 +44,7 @@ namespace ProiectPAW
             this.button2 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.btnIstoric = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
@@ -66,7 +67,7 @@ namespace ProiectPAW
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(9, 99);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(742, 280);
             this.listView1.TabIndex = 0;
@@ -133,7 +134,7 @@ namespace ProiectPAW
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Location = new System.Drawing.Point(656, 430);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(84, 27);
             this.btnPrint.TabIndex = 4;
@@ -145,7 +146,7 @@ namespace ProiectPAW
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(9, 430);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 27);
             this.button2.TabIndex = 4;
@@ -168,18 +169,30 @@ namespace ProiectPAW
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // btnIstoric
+            // 
+            this.btnIstoric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIstoric.Location = new System.Drawing.Point(307, 430);
+            this.btnIstoric.Name = "btnIstoric";
+            this.btnIstoric.Size = new System.Drawing.Size(121, 27);
+            this.btnIstoric.TabIndex = 5;
+            this.btnIstoric.Text = "Istoric";
+            this.btnIstoric.UseVisualStyleBackColor = true;
+            this.btnIstoric.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 490);
+            this.Controls.Add(this.btnIstoric);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form6";
@@ -203,5 +216,6 @@ namespace ProiectPAW
         private Button button2;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private PrintPreviewDialog printPreviewDialog1;
+        private Button btnIstoric;
     }
 }

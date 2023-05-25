@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace ProiectPAW
         string cantitate;
         string pret;
         Bitmap bmp;
+        string connString;
         public Form6(Materiale material)
 
         {
@@ -35,7 +37,46 @@ namespace ProiectPAW
                 itm.SubItems.Add((material1.pret[i] * material1.cantitate[i]).ToString());
                 listView1.Items.Add(itm);
             }
-            
+            connString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Istoric.accdb";
+
+            //db sync
+            OleDbConnection conexiune = new OleDbConnection(connString);
+            try
+            {
+                conexiune.Open();
+                OleDbCommand comanda = new OleDbCommand();
+                comanda.Connection = conexiune;
+                /*comanda.CommandText = "SELECT MAX(ID) FROM istoric";
+                int id = Convert.ToInt32(comanda.ExecuteScalar());*/
+
+                for (int i = 0; i < material1.total; i++)
+                {
+                    int id = 0;
+                    comanda.CommandText = "SELECT MAX(ID) FROM istoric";
+                    if (comanda.ExecuteScalar() != DBNull.Value)
+                    {
+                        id = Convert.ToInt32(comanda.ExecuteScalar());
+                    }                
+                    comanda.CommandText = "INSERT INTO istoric VALUES(?,?,?,?,?,?,?)";
+                    comanda.Parameters.Add("ID", OleDbType.Integer).Value = id + 1;
+                    comanda.Parameters.Add("Furnizor", OleDbType.Char, 40).Value = material1.furnizor.Nume;
+                    comanda.Parameters.Add("Denumire", OleDbType.Char, 40).Value = material1.denumireMarfa[i];
+                    comanda.Parameters.Add("Cantitate", OleDbType.Integer).Value = Convert.ToInt32(material1.cantitate[i]);
+                    comanda.Parameters.Add("Pret", OleDbType.Double).Value = Convert.ToDouble(material1.pret[i]);
+                    comanda.Parameters.Add("Total", OleDbType.Double).Value = Convert.ToDouble(material1.pret[i] * (double)material1.cantitate[i]);
+                    comanda.Parameters.Add("Data", OleDbType.Char, 20).Value = System.DateTime.Now.ToString();
+                    comanda.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexiune.Close();
+            }
+
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -71,6 +112,12 @@ namespace ProiectPAW
             frm.ShowDialog();
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form8 frm = new Form8(material1);
+            frm.ShowDialog();
         }
     }
 }

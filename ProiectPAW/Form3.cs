@@ -16,7 +16,7 @@ namespace ProiectPAW
         List<int> cantitati=new List<int>();
         List<double> preturi=new List<double>();
         Furnizor furnizor1;
-        int total;
+        int total=0;
 
         public Form3(Furnizor furnizor)
         {
@@ -60,7 +60,6 @@ namespace ProiectPAW
                     tbPret.Clear();
                     Console.WriteLine(furnizor1.ToString() + " 3");
                     Form4 frm=new Form4(denumiri, cantitati, preturi, furnizor1,total);
-                   
                     frm.Show();
 
                 }

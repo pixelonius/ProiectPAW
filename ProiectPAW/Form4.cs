@@ -59,5 +59,14 @@ namespace ProiectPAW
             this.Close();
             frm.ShowDialog();
         }
+
+        /*private void btnModif_Click(object sender, EventArgs e)
+        {
+            denumiri1.RemoveAt(denumiri1.Count-1);
+            cantitati1.RemoveAt(cantitati1.Count-1);
+            preturi1.RemoveAt(preturi1.Count-1);
+            total1--;
+            this.Close();
+        }*/
     }
 }
